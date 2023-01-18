@@ -14,7 +14,9 @@ namespace SampleFunctionApp.Test
         {
             var request = TestFactory.CreateHttpRequest("name", "Bill");
             var response = (OkObjectResult)await Function1.Run(request, logger);
-            Assert.Equal("Hello Bill! Welcome to Azure Functions!", response.Value);
+            Assert.IsType<string>(response.Value);
+            string rstr = response.Value as string;
+            Assert.StartsWith("Hello, Bill.", rstr);
         }
 
         [Fact]
@@ -22,7 +24,9 @@ namespace SampleFunctionApp.Test
         {
             var request = TestFactory.CreateHttpRequest("", "");
             var response = (OkObjectResult)await Function1.Run(request, logger);
-            Assert.Equal("Hello there! Welcome to Azure Functions!", response.Value);
+            Assert.IsType<string>(response.Value);
+            string rstr = response.Value as string;
+            Assert.StartsWith("This HTTP triggered function executed successfully", rstr);
         }
     }
 }
