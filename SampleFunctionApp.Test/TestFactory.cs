@@ -7,7 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace SampleFunctionApp.Test
+namespace AzFn.StarterKit.Test
 {
     public class TestFactory
     {

@@ -8,11 +8,11 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 
-namespace SampleFunctionApp
+namespace AzFn.StarterKit
 {
-    public static class Function1
+    public static class Hello
     {
-        [FunctionName("Function1")]
+        [FunctionName("Hello")]
         public static async Task<IActionResult> Run(
             [HttpTrigger(AuthorizationLevel.Anonymous, "get", "post", Route = null)] HttpRequest req,
             ILogger log)

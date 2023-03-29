@@ -3,7 +3,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Logging.Abstractions;
 using Xunit;
 
-namespace SampleFunctionApp.Test
+namespace AzFn.StarterKit.Test
 {
     public class Function1Test
     {
@@ -13,7 +13,7 @@ namespace SampleFunctionApp.Test
         public async void HttpTriggerWithParams()
         {
             var request = TestFactory.CreateHttpRequest("name", "Bill");
-            var response = (OkObjectResult)await Function1.Run(request, logger);
+            var response = (OkObjectResult)await Hello.Run(request, logger);
             Assert.IsType<string>(response.Value);
             string rstr = response.Value as string;
             Assert.StartsWith("Hello, Bill.", rstr);
@@ -23,7 +23,7 @@ namespace SampleFunctionApp.Test
         public async void HttpTriggerWithoutParams()
         {
             var request = TestFactory.CreateHttpRequest("", "");
-            var response = (OkObjectResult)await Function1.Run(request, logger);
+            var response = (OkObjectResult)await Hello.Run(request, logger);
             Assert.IsType<string>(response.Value);
             string rstr = response.Value as string;
             Assert.StartsWith("This HTTP triggered function executed successfully", rstr);
