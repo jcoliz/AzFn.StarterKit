@@ -1,8 +1,13 @@
 # Azure Functions Starter Kit
 
-Need to create a new Azure Function App? I start by copying this into a new project.
+This is a simple Azure Functions App which can be used as a template for a new project.
 
-This project simply presents an HTTP trigger, as in the ADO Azure Function sample (see below).
+## What's Here?
+
+* **Complete ARM Template**: Deploys a Function App and related storage using Bicep modules. See [.azure/deploy/](/.azure/deploy/).
+* **Code Examples**: Very simple sample code to respond to an HTTP trigger. See [Hello.cs](/StarterKit/Hello.cs).
+* **Azure Dev Ops Pipeline Definitions**: Ready-to-use pipelines for [Continuous Integration](/.azure/pipelines/ci.yaml) and [Continuous Deployment](/.azure/pipelines/cd.yaml).
+
 
 ## References
 
